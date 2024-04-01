@@ -11,6 +11,16 @@
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
+    <header class="header full-width-grid-con">
+        <div class="logo">
+            <img src="images/ah_logo.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="grid-con" id="app">
         <div id="album-list" class="col-span-full">
             <h2>Welcome To Album Haven!</h2>
@@ -21,7 +31,9 @@
             <div v-if="error">{{ error }}</div>
             <div v-if="!error" id="album">
                 <p>Artist: {{ artistName }}</p>
+                <button class="prev-btn">&lt;</button>
                 <img :src="'images/' + albumImage" alt="Album Cover">
+                <button class="next-btn">&gt;</button>
                 <p>Number of Tracks: {{ numberOfTracks }}</p>
                 <p>Release Year: {{ releaseYear }}</p>
                 <p>Genre: {{ genre }}</p>
