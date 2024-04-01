@@ -22,23 +22,24 @@
         </nav>
     </header>
     <div class="grid-con" id="app">
+        <div class="loading-spinner" v-if="loading"></div>
         <div id="album-list" class="col-span-full">
-            <h2>Welcome To Album Haven!</h2>
+            <h2>This is Album Haven!</h2>
             <p>Tune in to the rhythm of life, find your haven!</p>
-            <p>Click on an album to find out more about it.</p>
+            <p>Click on the arrows to skim through our music catalogue</p>
         </div>
         <div class="col-span-full" id="albumInfoCon">
             <div v-if="error">{{ error }}</div>
             <div v-if="!error" id="album">
-                <p>Artist: {{ artistName }}</p>
-                <button class="prev-btn">&lt;</button>
-                <img :src="'images/' + albumImage" alt="Album Cover">
-                <button class="next-btn">&gt;</button>
+                <p class="Artist">Artist: {{ artistName }}</p>
+                <button class="prev-btn" @click="showPrevAlbum">&lt;</button>
+                <img class="Album" :src="'images/' + albumImage" alt="Album Cover">
+                <button class="next-btn" @click="showNextAlbum">&gt;</button>
                 <p>Number of Tracks: {{ numberOfTracks }}</p>
                 <p>Release Year: {{ releaseYear }}</p>
                 <p>Genre: {{ genre }}</p>
             </div>
-        </div>        
+        </div>    
     </div>
 </body>
 </html>

@@ -11,7 +11,7 @@ class Artist extends Model
      *
      * @var array
      */
-    protected $fillable = ['id','name','genre'];
+    protected $fillable = ['name', 'genre'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -19,4 +19,9 @@ class Artist extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function albums()
+    {
+        return $this->hasMany(Album::class);
+    }
 }
