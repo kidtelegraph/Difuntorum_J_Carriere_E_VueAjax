@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Album Store API</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <div class="grid-con" id="app">
+        <div id="album-list" class="col-span-full">
+            <h2>Welcome to the Groove Studio</h2>
+            <p>Enjoy your journey through the musical landscape of our favorite albums.</p>
+            <p>Click on an album to find out more about it.</p>
+        </div>
+        <div class="col-span-full" id="albumInfoCon">
+            <div v-if="error">{{ error }}</div>
+            <div v-if="!error" id="album">
+                <p>Artist: {{ artistName }}</p>
+                <img :src="'images/' + albumImage" alt="Album Cover">
+                <p>Number of Tracks: {{ numberOfTracks }}</p>
+                <p>Release Year: {{ releaseYear }}</p>
+                <p>Genre: {{ genre }}</p>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
