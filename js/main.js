@@ -47,6 +47,30 @@ const albumStore = Vue.createApp({
                     console.log(error);
                     // Handle fetch error
                 });
+        },
+        prevSlide() {
+            if (this.currentSlide > 0) {
+                this.currentSlide--;
+            }
+        },
+        nextSlide() {
+            if (this.currentSlide < this.albumsData.length - 1) {
+                this.currentSlide++;
+            }
+        }
+    },
+    computed: {
+        artistName() {
+            return this.albumsData[this.currentSlide] ? this.albumsData[this.currentSlide].artist_name[0] : 'Not available';
+        },
+        numberOfTracks() {
+            return this.albumsData[this.currentSlide] ? this.albumsData[this.currentSlide].number_of_tracks : 'Not available';
+        },
+        releaseYear() {
+            return this.albumsData[this.currentSlide] ? this.albumsData[this.currentSlide].release_year : 'Not available';
+        },
+        genre() {
+            return this.albumsData[this.currentSlide] ? this.albumsData[this.currentSlide].genre[0] : 'Not available';
         }
     }
 });
