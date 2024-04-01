@@ -1,0 +1,34 @@
+#slider-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  #image-slider {
+    // make images display side by side as one long row
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #prev-btn, #next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    background-color: rgba(255,255,255,.6);
+  }
+
+  #prev-btn {
+    left: 0px;
+  }
+
+  #next-btn {
+    right: 0px;
+  }
